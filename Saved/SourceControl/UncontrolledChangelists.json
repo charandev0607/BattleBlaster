@@ -1,0 +1,20 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"C:/Users/charan dev/Documents/Unreal Projects/BattleBlasterStarterProject/Content/BLUEPRINTS/BP_playertank.uasset",
+				"C:/Users/charan dev/Documents/Unreal Projects/BattleBlasterStarterProject/Content/Maps/Level_1.umap",
+				"C:/Users/charan dev/Documents/Unreal Projects/BattleBlasterStarterProject/Content/BLUEPRINTS/BP_BBgamemode.uasset",
+				"C:/Users/charan dev/Documents/Unreal Projects/BattleBlasterStarterProject/Content/BLUEPRINTS/IMC_default.uasset",
+				"C:/Users/charan dev/Documents/Unreal Projects/BattleBlasterStarterProject/Content/BLUEPRINTS/IA_move.uasset",
+				"C:/Users/charan dev/Documents/Unreal Projects/BattleBlasterStarterProject/Content/BLUEPRINTS/IA_turn.uasset",
+				"C:/Users/charan dev/Documents/Unreal Projects/BattleBlasterStarterProject/Content/BLUEPRINTS/BP_enemy.uasset",
+				"C:/Users/charan dev/Documents/Unreal Projects/BattleBlasterStarterProject/Content/BLUEPRINTS/IA_fire.uasset",
+				"C:/Users/charan dev/Documents/Unreal Projects/BattleBlasterStarterProject/Content/BLUEPRINTS/BP_projectile.uasset"
+			]
+		}
+	]
+}
