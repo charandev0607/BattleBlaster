@@ -19,7 +19,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 // ********** Begin Class Atank ********************************************************************
 BATTLEBLASTER_API UClass* Z_Construct_UClass_Atank_NoRegister();
 
-#define FID_Users_charan_dev_Documents_Unreal_Projects_BattleBlasterStarterProject_Source_BattleBlaster_tank_h_21_INCLASS_NO_PURE_DECLS \
+#define FID_Users_charan_dev_Documents_Unreal_Projects_BattleBlasterStarterProject_Source_BattleBlaster_tank_h_18_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAtank(); \
 	friend struct Z_Construct_UClass_Atank_Statics; \
@@ -30,7 +30,7 @@ public: \
 	DECLARE_SERIALIZER(Atank)
 
 
-#define FID_Users_charan_dev_Documents_Unreal_Projects_BattleBlasterStarterProject_Source_BattleBlaster_tank_h_21_ENHANCED_CONSTRUCTORS \
+#define FID_Users_charan_dev_Documents_Unreal_Projects_BattleBlasterStarterProject_Source_BattleBlaster_tank_h_18_ENHANCED_CONSTRUCTORS \
 	/** Deleted move- and copy-constructors, should never be used */ \
 	Atank(Atank&&) = delete; \
 	Atank(const Atank&) = delete; \
@@ -40,12 +40,12 @@ public: \
 	NO_API virtual ~Atank();
 
 
-#define FID_Users_charan_dev_Documents_Unreal_Projects_BattleBlasterStarterProject_Source_BattleBlaster_tank_h_18_PROLOG
-#define FID_Users_charan_dev_Documents_Unreal_Projects_BattleBlasterStarterProject_Source_BattleBlaster_tank_h_21_GENERATED_BODY \
+#define FID_Users_charan_dev_Documents_Unreal_Projects_BattleBlasterStarterProject_Source_BattleBlaster_tank_h_15_PROLOG
+#define FID_Users_charan_dev_Documents_Unreal_Projects_BattleBlasterStarterProject_Source_BattleBlaster_tank_h_18_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_Users_charan_dev_Documents_Unreal_Projects_BattleBlasterStarterProject_Source_BattleBlaster_tank_h_21_INCLASS_NO_PURE_DECLS \
-	FID_Users_charan_dev_Documents_Unreal_Projects_BattleBlasterStarterProject_Source_BattleBlaster_tank_h_21_ENHANCED_CONSTRUCTORS \
+	FID_Users_charan_dev_Documents_Unreal_Projects_BattleBlasterStarterProject_Source_BattleBlaster_tank_h_18_INCLASS_NO_PURE_DECLS \
+	FID_Users_charan_dev_Documents_Unreal_Projects_BattleBlasterStarterProject_Source_BattleBlaster_tank_h_18_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

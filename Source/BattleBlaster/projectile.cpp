@@ -13,13 +13,13 @@ Aprojectile::Aprojectile()
 	projectilemovementcomp = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("projectilemovementcomponent"));
 	projectilemovementcomp->InitialSpeed = 1000.0f;
 	projectilemovementcomp->MaxSpeed = 1000.0f;
+	projectilemesh->OnComponentHit.AddDynamic(this, &Aprojectile::onhit);
 }
 
 // Called when the game starts or when spawned
 void Aprojectile::BeginPlay()
 {
 	Super::BeginPlay();
-	projectilemesh->OnComponentHit.AddDynamic(this,&Aprojectile::onhit);
 }
 
 // Called every frame
@@ -34,8 +34,8 @@ void Aprojectile::onhit(UPrimitiveComponent* HitComponent, AActor* OtherActor, U
 	AActor* myowner = GetOwner();
 	if (myowner) {
 		if (OtherActor && OtherActor != myowner && OtherActor != this) {
-			UGameplayStatics::ApplyDamage(OtherActor,damage,myowner->GetInstigatorController(), this,UDamageType::StaticClass());
-			
+			UGameplayStatics::ApplyDamage(OtherActor, damage, myowner->GetInstigatorController(), this, UDamageType::StaticClass());
+
 		}
 	}
 	Destroy();

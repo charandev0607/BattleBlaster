@@ -5,6 +5,8 @@
 #include "Camera/CameraComponent.h"
 #include "InputMappingContext.h"
 #include "Kismet/GameplayStatics.h"
+#include "EnhancedInputSubsystems.h"
+#include "EnhancedInputComponent.h"
 Atank::Atank()
 {
 	springarmcomp = CreateDefaultSubobject<USpringArmComponent>(TEXT("springarmcomp"));
@@ -33,7 +35,7 @@ void Atank::BeginPlay()
 void Atank::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	APlayerController* playercontroller = Cast<APlayerController>(GetController());
+	playercontroller = Cast<APlayerController>(GetController());
 	if (playercontroller) {
 		FHitResult hitresult;
 		playercontroller->GetHitResultUnderCursor(ECC_Visibility,false,hitresult);
@@ -50,7 +52,7 @@ void Atank::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 	if (UEnhancedInputComponent* eic = Cast<UEnhancedInputComponent>(PlayerInputComponent)) {
 		eic->BindAction(moveaction, ETriggerEvent::Triggered, this, &Atank::moveinput);
 		eic->BindAction(turnaction, ETriggerEvent::Triggered, this, &Atank::turninput);
-		eic->BindAction(fireaction, ETriggerEvent::Started, this, &Atank::fire);
+		eic->BindAction(fireaction, ETriggerEvent::Started, this, &Abasepawn::fire);
 	}
 }
 
@@ -71,9 +73,10 @@ void Atank::turninput(const FInputActionValue& value)
 
 void Atank::handledestruction() {
 	Super::handledestruction();
-	playerisalive = false;
-	SetActorHiddenInGame(true);
+	SetActorHiddenInGame(true); 
 	SetActorTickEnabled(false);
+	setplayerenabled(false);
+	playerisalive = false;
 }
 
 void Atank::setplayerenabled(bool enabled)

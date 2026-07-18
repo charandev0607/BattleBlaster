@@ -1,5 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 #include "basepawn.h"
+#include "projectile.h"
 
 // Sets default values
 Abasepawn::Abasepawn()
