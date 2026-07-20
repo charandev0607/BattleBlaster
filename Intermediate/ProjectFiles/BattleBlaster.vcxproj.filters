@@ -66,6 +66,12 @@
     <ClInclude Include="..\..\Source\BattleBlaster\health.h">
       <Filter>Source\BattleBlaster</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\BattleBlaster\MyGameInstance.cpp">
+      <Filter>Source\BattleBlaster</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BattleBlaster\MyGameInstance.h">
+      <Filter>Source\BattleBlaster</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\BattleBlaster\projectile.cpp">
       <Filter>Source\BattleBlaster</Filter>
     </ClCompile>

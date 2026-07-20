@@ -4,6 +4,7 @@
 #include "battleblastergamemode.h"
 #include "enemyturrent.h"
 #include "Kismet/GameplayStatics.h"
+#include "MyGameInstance.h"
 
 void Abattleblastergamemode::BeginPlay()
 {
@@ -32,7 +33,7 @@ void Abattleblastergamemode::actordied(AActor* deadactor)
 {
 	if (deadactor == playertank) {
 		playertank->handledestruction();
-		UE_LOG(LogTemp, Display, TEXT("playerdied"));;
+		isgameover = true;
 	}
 	else {
 		Aenemyturrent* deadtower = Cast<Aenemyturrent>(deadactor);
@@ -40,8 +41,32 @@ void Abattleblastergamemode::actordied(AActor* deadactor)
 			deadtower->handledestruction();
 			enemycount--;
 			if (enemycount == 0) {
-				UE_LOG(LogTemp, Display, TEXT("victory"));
+				isgameover = true;
+				isvictory = true;
 			}
+		}
+	}
+	if (isgameover) {
+		FTimerHandle gameoverhandle;
+		GetWorldTimerManager().SetTimer(gameoverhandle, this,&Abattleblastergamemode::ongameovertimertimeout,gameovertimer, false);
+	}
+}
+
+
+void Abattleblastergamemode::ongameovertimertimeout()
+{
+	UGameInstance* gameinstance = GetGameInstance();
+	if (gameinstance) {
+		UMyGameInstance* mygameinstance=Cast<UMyGameInstance>(gameinstance);
+		if (mygameinstance) {
+			if (isvictory) {
+				mygameinstance->loadnextlevel();
+			}
+			else {
+				mygameinstance->restartlevel();
+
+			}
+
 		}
 	}
 }

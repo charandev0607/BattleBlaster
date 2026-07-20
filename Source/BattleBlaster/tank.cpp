@@ -88,6 +88,7 @@ void Atank::setplayerenabled(bool enabled)
 		else {
 			DisableInput(playercontroller);
 		}
+		playercontroller->bShowMouseCursor = enabled;
 	}
 }
 

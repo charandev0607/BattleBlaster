@@ -13,7 +13,12 @@
 				"C:/Users/charan dev/Documents/Unreal Projects/BattleBlasterStarterProject/Content/BLUEPRINTS/IA_turn.uasset",
 				"C:/Users/charan dev/Documents/Unreal Projects/BattleBlasterStarterProject/Content/BLUEPRINTS/BP_enemy.uasset",
 				"C:/Users/charan dev/Documents/Unreal Projects/BattleBlasterStarterProject/Content/BLUEPRINTS/IA_fire.uasset",
-				"C:/Users/charan dev/Documents/Unreal Projects/BattleBlasterStarterProject/Content/BLUEPRINTS/BP_projectile.uasset"
+				"C:/Users/charan dev/Documents/Unreal Projects/BattleBlasterStarterProject/Content/BLUEPRINTS/BP_projectile.uasset",
+				"C:/Users/charan dev/Documents/Unreal Projects/BattleBlasterStarterProject/Content/BLUEPRINTS/BP_BBplayercontroller.uasset",
+				"C:/Users/charan dev/Documents/Unreal Projects/BattleBlasterStarterProject/Content/BLUEPRINTS/BP_gameinstance.uasset",
+				"C:/Users/charan dev/Documents/Unreal Projects/BattleBlasterStarterProject/Content/Maps/Level_4.umap",
+				"C:/Users/charan dev/Documents/Unreal Projects/BattleBlasterStarterProject/Content/Maps/Level_2.umap",
+				"C:/Users/charan dev/Documents/Unreal Projects/BattleBlasterStarterProject/Content/Maps/Level_3.umap"
 			]
 		}
 	]

@@ -18,7 +18,13 @@ class BATTLEBLASTER_API Abattleblastergamemode : public AGameModeBase
 protected:
 	virtual void BeginPlay() override;
 public:
+
+	UPROPERTY(EditAnywhere)
+	float gameovertimer = 3.0f;
 	Atank* playertank;
 	int32 enemycount;
 	void actordied(AActor* deadactor);
+	void ongameovertimertimeout();
+	bool isgameover = false;
+	bool isvictory = false;
 };
