@@ -6,6 +6,7 @@
 #include "GameFramework/Pawn.h"
 #include "Components/CapsuleComponent.h"
 #include "projectile.h"
+#include "NiagaraFunctionLibrary.h"
 #include "basepawn.generated.h"
 
 UCLASS()
@@ -18,6 +19,8 @@ public:
 	Abasepawn();
 
 protected:
+	UPROPERTY(EditAnywhere)
+	UNiagaraSystem* deathparticles;
 	UPROPERTY(VisibleAnywhere)
 	UCapsuleComponent* capsulecomp;
 

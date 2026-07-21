@@ -14,6 +14,8 @@ void EmptyLinkFunctionForGeneratedCodebattleblastergamemode() {}
 // ********** Begin Cross Module References ********************************************************
 BATTLEBLASTER_API UClass* Z_Construct_UClass_Abattleblastergamemode();
 BATTLEBLASTER_API UClass* Z_Construct_UClass_Abattleblastergamemode_NoRegister();
+BATTLEBLASTER_API UClass* Z_Construct_UClass_Uscreenmessage_NoRegister();
+COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 ENGINE_API UClass* Z_Construct_UClass_AGameModeBase();
 UPackage* Z_Construct_UPackage__Script_BattleBlaster();
 // ********** End Cross Module References **********************************************************
@@ -63,12 +65,22 @@ struct Z_Construct_UClass_Abattleblastergamemode_Statics
 		{ "ModuleRelativePath", "battleblastergamemode.h" },
 		{ "ShowCategories", "Input|MouseInput Input|TouchInput" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_screenmessageclass_MetaData[] = {
+		{ "Category", "battleblastergamemode" },
+		{ "ModuleRelativePath", "battleblastergamemode.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_gameovertimer_MetaData[] = {
 		{ "Category", "battleblastergamemode" },
 		{ "ModuleRelativePath", "battleblastergamemode.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_countdowndelay_MetaData[] = {
+		{ "Category", "battleblastergamemode" },
+		{ "ModuleRelativePath", "battleblastergamemode.h" },
+	};
 #endif // WITH_METADATA
+	static const UECodeGen_Private::FClassPropertyParams NewProp_screenmessageclass;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_gameovertimer;
+	static const UECodeGen_Private::FIntPropertyParams NewProp_countdowndelay;
 	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
@@ -76,9 +88,13 @@ struct Z_Construct_UClass_Abattleblastergamemode_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
+const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_Abattleblastergamemode_Statics::NewProp_screenmessageclass = { "screenmessageclass", nullptr, (EPropertyFlags)0x0014000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Abattleblastergamemode, screenmessageclass), Z_Construct_UClass_UClass, Z_Construct_UClass_Uscreenmessage_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_screenmessageclass_MetaData), NewProp_screenmessageclass_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_Abattleblastergamemode_Statics::NewProp_gameovertimer = { "gameovertimer", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Abattleblastergamemode, gameovertimer), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_gameovertimer_MetaData), NewProp_gameovertimer_MetaData) };
+const UECodeGen_Private::FIntPropertyParams Z_Construct_UClass_Abattleblastergamemode_Statics::NewProp_countdowndelay = { "countdowndelay", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Abattleblastergamemode, countdowndelay), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_countdowndelay_MetaData), NewProp_countdowndelay_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_Abattleblastergamemode_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_Abattleblastergamemode_Statics::NewProp_screenmessageclass,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_Abattleblastergamemode_Statics::NewProp_gameovertimer,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_Abattleblastergamemode_Statics::NewProp_countdowndelay,
 };
 static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_Abattleblastergamemode_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_Abattleblastergamemode_Statics::DependentSingletons[])() = {
@@ -118,10 +134,10 @@ Abattleblastergamemode::~Abattleblastergamemode() {}
 struct Z_CompiledInDeferFile_FID_Users_charan_dev_Documents_Unreal_Projects_BattleBlasterStarterProject_Source_BattleBlaster_battleblastergamemode_h__Script_BattleBlaster_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_Abattleblastergamemode, Abattleblastergamemode::StaticClass, TEXT("Abattleblastergamemode"), &Z_Registration_Info_UClass_Abattleblastergamemode, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(Abattleblastergamemode), 1730307240U) },
+		{ Z_Construct_UClass_Abattleblastergamemode, Abattleblastergamemode::StaticClass, TEXT("Abattleblastergamemode"), &Z_Registration_Info_UClass_Abattleblastergamemode, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(Abattleblastergamemode), 3705299206U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_charan_dev_Documents_Unreal_Projects_BattleBlasterStarterProject_Source_BattleBlaster_battleblastergamemode_h__Script_BattleBlaster_410770328(TEXT("/Script/BattleBlaster"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_charan_dev_Documents_Unreal_Projects_BattleBlasterStarterProject_Source_BattleBlaster_battleblastergamemode_h__Script_BattleBlaster_533561804(TEXT("/Script/BattleBlaster"),
 	Z_CompiledInDeferFile_FID_Users_charan_dev_Documents_Unreal_Projects_BattleBlasterStarterProject_Source_BattleBlaster_battleblastergamemode_h__Script_BattleBlaster_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_charan_dev_Documents_Unreal_Projects_BattleBlasterStarterProject_Source_BattleBlaster_battleblastergamemode_h__Script_BattleBlaster_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

@@ -20,6 +20,7 @@ ENGINE_API UClass* Z_Construct_UClass_APawn();
 ENGINE_API UClass* Z_Construct_UClass_UCapsuleComponent_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_USceneComponent_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
+NIAGARA_API UClass* Z_Construct_UClass_UNiagaraSystem_NoRegister();
 UPackage* Z_Construct_UPackage__Script_BattleBlaster();
 // ********** End Cross Module References **********************************************************
 
@@ -64,6 +65,10 @@ struct Z_Construct_UClass_Abasepawn_Statics
 		{ "IncludePath", "basepawn.h" },
 		{ "ModuleRelativePath", "basepawn.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_deathparticles_MetaData[] = {
+		{ "Category", "basepawn" },
+		{ "ModuleRelativePath", "basepawn.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_capsulecomp_MetaData[] = {
 		{ "Category", "basepawn" },
 		{ "EditInline", "true" },
@@ -89,6 +94,7 @@ struct Z_Construct_UClass_Abasepawn_Statics
 		{ "ModuleRelativePath", "basepawn.h" },
 	};
 #endif // WITH_METADATA
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_deathparticles;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_capsulecomp;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_basemesh;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_turrentmesh;
@@ -101,12 +107,14 @@ struct Z_Construct_UClass_Abasepawn_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_Abasepawn_Statics::NewProp_deathparticles = { "deathparticles", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Abasepawn, deathparticles), Z_Construct_UClass_UNiagaraSystem_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_deathparticles_MetaData), NewProp_deathparticles_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_Abasepawn_Statics::NewProp_capsulecomp = { "capsulecomp", nullptr, (EPropertyFlags)0x00200800000a0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Abasepawn, capsulecomp), Z_Construct_UClass_UCapsuleComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_capsulecomp_MetaData), NewProp_capsulecomp_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_Abasepawn_Statics::NewProp_basemesh = { "basemesh", nullptr, (EPropertyFlags)0x00200800000a0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Abasepawn, basemesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_basemesh_MetaData), NewProp_basemesh_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_Abasepawn_Statics::NewProp_turrentmesh = { "turrentmesh", nullptr, (EPropertyFlags)0x00200800000a0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Abasepawn, turrentmesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_turrentmesh_MetaData), NewProp_turrentmesh_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_Abasepawn_Statics::NewProp_projectilespawnpoint = { "projectilespawnpoint", nullptr, (EPropertyFlags)0x00200800000a0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Abasepawn, projectilespawnpoint), Z_Construct_UClass_USceneComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_projectilespawnpoint_MetaData), NewProp_projectilespawnpoint_MetaData) };
 const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_Abasepawn_Statics::NewProp_projectileclass = { "projectileclass", nullptr, (EPropertyFlags)0x0024080000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Abasepawn, projectileclass), Z_Construct_UClass_UClass, Z_Construct_UClass_Aprojectile_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_projectileclass_MetaData), NewProp_projectileclass_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_Abasepawn_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_Abasepawn_Statics::NewProp_deathparticles,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_Abasepawn_Statics::NewProp_capsulecomp,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_Abasepawn_Statics::NewProp_basemesh,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_Abasepawn_Statics::NewProp_turrentmesh,
@@ -150,10 +158,10 @@ Abasepawn::~Abasepawn() {}
 struct Z_CompiledInDeferFile_FID_Users_charan_dev_Documents_Unreal_Projects_BattleBlasterStarterProject_Source_BattleBlaster_basepawn_h__Script_BattleBlaster_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_Abasepawn, Abasepawn::StaticClass, TEXT("Abasepawn"), &Z_Registration_Info_UClass_Abasepawn, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(Abasepawn), 2221741528U) },
+		{ Z_Construct_UClass_Abasepawn, Abasepawn::StaticClass, TEXT("Abasepawn"), &Z_Registration_Info_UClass_Abasepawn, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(Abasepawn), 4188995883U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_charan_dev_Documents_Unreal_Projects_BattleBlasterStarterProject_Source_BattleBlaster_basepawn_h__Script_BattleBlaster_1646265689(TEXT("/Script/BattleBlaster"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_charan_dev_Documents_Unreal_Projects_BattleBlasterStarterProject_Source_BattleBlaster_basepawn_h__Script_BattleBlaster_88098430(TEXT("/Script/BattleBlaster"),
 	Z_CompiledInDeferFile_FID_Users_charan_dev_Documents_Unreal_Projects_BattleBlasterStarterProject_Source_BattleBlaster_basepawn_h__Script_BattleBlaster_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_charan_dev_Documents_Unreal_Projects_BattleBlasterStarterProject_Source_BattleBlaster_basepawn_h__Script_BattleBlaster_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

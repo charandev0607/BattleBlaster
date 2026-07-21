@@ -78,6 +78,12 @@
     <ClInclude Include="..\..\Source\BattleBlaster\projectile.h">
       <Filter>Source\BattleBlaster</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\BattleBlaster\screenmessage.cpp">
+      <Filter>Source\BattleBlaster</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BattleBlaster\screenmessage.h">
+      <Filter>Source\BattleBlaster</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\BattleBlaster\tank.cpp">
       <Filter>Source\BattleBlaster</Filter>
     </ClCompile>

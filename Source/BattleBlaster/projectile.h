@@ -6,6 +6,9 @@
 #include "GameFramework/Actor.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Components/StaticMeshComponent.h"
+#include "NiagaraComponent.h"
+#include "NiagaraFunctionLibrary.h"
+
 #include "projectile.generated.h"
 
 UCLASS()
@@ -24,6 +27,10 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+	UPROPERTY(VisibleAnywhere)
+	UNiagaraComponent* trailparticles;
+	UPROPERTY(EditAnywhere)
+	UNiagaraSystem* hitparticles;
 	UPROPERTY(VisibleAnywhere)
 	UStaticMeshComponent* projectilemesh;
 	UPROPERTY(VisibleAnywhere)

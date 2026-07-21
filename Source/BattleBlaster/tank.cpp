@@ -30,6 +30,8 @@ void Atank::BeginPlay()
 			}
 		}
 	}
+	UE_LOG(LogTemp, Display, TEXT("123"));
+	setplayerenabled(false);
 }
 // Called every frame
 void Atank::Tick(float DeltaTime)

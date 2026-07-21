@@ -27,7 +27,36 @@ void Abattleblastergamemode::BeginPlay()
 			i++;
 		}
 	}
+	APlayerController* playercontroller = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+	if (playercontroller) {
+		screenmessagewidget=CreateWidget<Uscreenmessage>(playercontroller,screenmessageclass);
+		if (screenmessagewidget) {
+			screenmessagewidget->AddToPlayerScreen();
+		}
+	}
+	countdownseconds = countdowndelay;
+	GetWorldTimerManager().SetTimer(countdowntimerhandle, this, &Abattleblastergamemode::oncountdowntimertimeout, 1.0f, true);
 }
+void Abattleblastergamemode::oncountdowntimertimeout()
+{
+	countdownseconds--;
+	if (countdownseconds > 0) {
+		FString countdownsecondfstring = FString::FromInt(countdownseconds);
+		screenmessagewidget->setmessagetext(countdownsecondfstring);
+	}
+	else if (countdownseconds == 0) {
+		screenmessagewidget->setmessagetext("GO");
+		if (playertank) {
+			playertank->setplayerenabled(true);
+		}
+	}
+	else {
+		GetWorldTimerManager().ClearTimer(countdowntimerhandle);
+		UE_LOG(LogTemp, Display, TEXT("clear timer"));
+		screenmessagewidget->SetVisibility(ESlateVisibility::Hidden);
+	}
+}
+
 
 void Abattleblastergamemode::actordied(AActor* deadactor)
 {
@@ -47,6 +76,9 @@ void Abattleblastergamemode::actordied(AActor* deadactor)
 		}
 	}
 	if (isgameover) {
+		FString gameoverstring = isvictory ? "Victory!" : "Defeat!";
+		screenmessagewidget->setmessagetext(gameoverstring);
+		screenmessagewidget->SetVisibility(ESlateVisibility::Visible);
 		FTimerHandle gameoverhandle;
 		GetWorldTimerManager().SetTimer(gameoverhandle, this,&Abattleblastergamemode::ongameovertimertimeout,gameovertimer, false);
 	}
@@ -70,3 +102,4 @@ void Abattleblastergamemode::ongameovertimertimeout()
 		}
 	}
 }
+
