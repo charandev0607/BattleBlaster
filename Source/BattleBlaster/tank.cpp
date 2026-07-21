@@ -79,6 +79,9 @@ void Atank::handledestruction() {
 	SetActorTickEnabled(false);
 	setplayerenabled(false);
 	playerisalive = false;
+	if (playercontroller) {
+		playercontroller->ClientStartCameraShake(ucamerashake);
+	}
 }
 
 void Atank::setplayerenabled(bool enabled)

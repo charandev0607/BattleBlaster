@@ -1,5 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 #include "basepawn.h"
+#include "Kismet/GameplayStatics.h"
 #include "projectile.h"
 
 // Sets default values
@@ -42,6 +43,7 @@ void Abasepawn::fire()
 void Abasepawn::handledestruction()
 {
 	UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(),deathparticles,GetActorLocation(),GetActorRotation());
+	UGameplayStatics::PlaySoundAtLocation(GetWorld(), explodeaudio, GetActorLocation());
 }
 
 

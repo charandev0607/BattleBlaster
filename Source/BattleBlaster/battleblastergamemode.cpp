@@ -3,7 +3,6 @@
 
 #include "battleblastergamemode.h"
 #include "enemyturrent.h"
-#include "Kismet/GameplayStatics.h"
 #include "MyGameInstance.h"
 
 void Abattleblastergamemode::BeginPlay()

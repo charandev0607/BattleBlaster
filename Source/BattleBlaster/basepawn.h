@@ -20,6 +20,8 @@ public:
 
 protected:
 	UPROPERTY(EditAnywhere)
+	USoundBase* explodeaudio;
+	UPROPERTY(EditAnywhere)
 	UNiagaraSystem* deathparticles;
 	UPROPERTY(VisibleAnywhere)
 	UCapsuleComponent* capsulecomp;

@@ -15,7 +15,9 @@ void EmptyLinkFunctionForGeneratedCodetank() {}
 BATTLEBLASTER_API UClass* Z_Construct_UClass_Abasepawn();
 BATTLEBLASTER_API UClass* Z_Construct_UClass_Atank();
 BATTLEBLASTER_API UClass* Z_Construct_UClass_Atank_NoRegister();
+COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 ENGINE_API UClass* Z_Construct_UClass_UCameraComponent_NoRegister();
+ENGINE_API UClass* Z_Construct_UClass_UCameraShakeBase_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_USpringArmComponent_NoRegister();
 ENHANCEDINPUT_API UClass* Z_Construct_UClass_UInputAction_NoRegister();
 ENHANCEDINPUT_API UClass* Z_Construct_UClass_UInputMappingContext_NoRegister();
@@ -79,6 +81,10 @@ struct Z_Construct_UClass_Atank_Statics
 		{ "Category", "Input" },
 		{ "ModuleRelativePath", "tank.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ucamerashake_MetaData[] = {
+		{ "Category", "tank" },
+		{ "ModuleRelativePath", "tank.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_springarmcomp_MetaData[] = {
 		{ "Category", "tank" },
 		{ "EditInline", "true" },
@@ -102,6 +108,7 @@ struct Z_Construct_UClass_Atank_Statics
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_moveaction;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_turnaction;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_fireaction;
+	static const UECodeGen_Private::FClassPropertyParams NewProp_ucamerashake;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_springarmcomp;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_cameracomp;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_speed;
@@ -117,6 +124,7 @@ const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_Atank_Statics:
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_Atank_Statics::NewProp_moveaction = { "moveaction", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Atank, moveaction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_moveaction_MetaData), NewProp_moveaction_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_Atank_Statics::NewProp_turnaction = { "turnaction", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Atank, turnaction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_turnaction_MetaData), NewProp_turnaction_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_Atank_Statics::NewProp_fireaction = { "fireaction", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Atank, fireaction), Z_Construct_UClass_UInputAction_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_fireaction_MetaData), NewProp_fireaction_MetaData) };
+const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_Atank_Statics::NewProp_ucamerashake = { "ucamerashake", nullptr, (EPropertyFlags)0x0014000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Atank, ucamerashake), Z_Construct_UClass_UClass, Z_Construct_UClass_UCameraShakeBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ucamerashake_MetaData), NewProp_ucamerashake_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_Atank_Statics::NewProp_springarmcomp = { "springarmcomp", nullptr, (EPropertyFlags)0x00100000000a0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Atank, springarmcomp), Z_Construct_UClass_USpringArmComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_springarmcomp_MetaData), NewProp_springarmcomp_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_Atank_Statics::NewProp_cameracomp = { "cameracomp", nullptr, (EPropertyFlags)0x00100000000a0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Atank, cameracomp), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_cameracomp_MetaData), NewProp_cameracomp_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_Atank_Statics::NewProp_speed = { "speed", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Atank, speed), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_speed_MetaData), NewProp_speed_MetaData) };
@@ -126,6 +134,7 @@ const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_Atank_Sta
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_Atank_Statics::NewProp_moveaction,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_Atank_Statics::NewProp_turnaction,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_Atank_Statics::NewProp_fireaction,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_Atank_Statics::NewProp_ucamerashake,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_Atank_Statics::NewProp_springarmcomp,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_Atank_Statics::NewProp_cameracomp,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_Atank_Statics::NewProp_speed,
@@ -168,10 +177,10 @@ Atank::~Atank() {}
 struct Z_CompiledInDeferFile_FID_Users_charan_dev_Documents_Unreal_Projects_BattleBlasterStarterProject_Source_BattleBlaster_tank_h__Script_BattleBlaster_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_Atank, Atank::StaticClass, TEXT("Atank"), &Z_Registration_Info_UClass_Atank, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(Atank), 2193931108U) },
+		{ Z_Construct_UClass_Atank, Atank::StaticClass, TEXT("Atank"), &Z_Registration_Info_UClass_Atank, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(Atank), 1308845555U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_charan_dev_Documents_Unreal_Projects_BattleBlasterStarterProject_Source_BattleBlaster_tank_h__Script_BattleBlaster_1933180881(TEXT("/Script/BattleBlaster"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_charan_dev_Documents_Unreal_Projects_BattleBlasterStarterProject_Source_BattleBlaster_tank_h__Script_BattleBlaster_3379731586(TEXT("/Script/BattleBlaster"),
 	Z_CompiledInDeferFile_FID_Users_charan_dev_Documents_Unreal_Projects_BattleBlasterStarterProject_Source_BattleBlaster_tank_h__Script_BattleBlaster_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_charan_dev_Documents_Unreal_Projects_BattleBlasterStarterProject_Source_BattleBlaster_tank_h__Script_BattleBlaster_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

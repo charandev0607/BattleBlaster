@@ -15,11 +15,14 @@ void EmptyLinkFunctionForGeneratedCodeprojectile() {}
 // ********** Begin Cross Module References ********************************************************
 BATTLEBLASTER_API UClass* Z_Construct_UClass_Aprojectile();
 BATTLEBLASTER_API UClass* Z_Construct_UClass_Aprojectile_NoRegister();
+COREUOBJECT_API UClass* Z_Construct_UClass_UClass();
 COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 ENGINE_API UClass* Z_Construct_UClass_AActor();
 ENGINE_API UClass* Z_Construct_UClass_AActor_NoRegister();
+ENGINE_API UClass* Z_Construct_UClass_UCameraShakeBase_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_UPrimitiveComponent_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_UProjectileMovementComponent_NoRegister();
+ENGINE_API UClass* Z_Construct_UClass_USoundBase_NoRegister();
 ENGINE_API UClass* Z_Construct_UClass_UStaticMeshComponent_NoRegister();
 ENGINE_API UScriptStruct* Z_Construct_UScriptStruct_FHitResult();
 NIAGARA_API UClass* Z_Construct_UClass_UNiagaraComponent_NoRegister();
@@ -143,12 +146,24 @@ struct Z_Construct_UClass_Aprojectile_Statics
 		{ "IncludePath", "projectile.h" },
 		{ "ModuleRelativePath", "projectile.h" },
 	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_ucamerashake_MetaData[] = {
+		{ "Category", "projectile" },
+		{ "ModuleRelativePath", "projectile.h" },
+	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_trailparticles_MetaData[] = {
 		{ "Category", "projectile" },
 		{ "EditInline", "true" },
 		{ "ModuleRelativePath", "projectile.h" },
 	};
 	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_hitparticles_MetaData[] = {
+		{ "Category", "projectile" },
+		{ "ModuleRelativePath", "projectile.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_launchsound_MetaData[] = {
+		{ "Category", "projectile" },
+		{ "ModuleRelativePath", "projectile.h" },
+	};
+	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_hitsound_MetaData[] = {
 		{ "Category", "projectile" },
 		{ "ModuleRelativePath", "projectile.h" },
 	};
@@ -167,8 +182,11 @@ struct Z_Construct_UClass_Aprojectile_Statics
 		{ "ModuleRelativePath", "projectile.h" },
 	};
 #endif // WITH_METADATA
+	static const UECodeGen_Private::FClassPropertyParams NewProp_ucamerashake;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_trailparticles;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_hitparticles;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_launchsound;
+	static const UECodeGen_Private::FObjectPropertyParams NewProp_hitsound;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_projectilemesh;
 	static const UECodeGen_Private::FObjectPropertyParams NewProp_projectilemovementcomp;
 	static const UECodeGen_Private::FFloatPropertyParams NewProp_damage;
@@ -183,14 +201,20 @@ struct Z_Construct_UClass_Aprojectile_Statics
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
+const UECodeGen_Private::FClassPropertyParams Z_Construct_UClass_Aprojectile_Statics::NewProp_ucamerashake = { "ucamerashake", nullptr, (EPropertyFlags)0x0014000000000001, UECodeGen_Private::EPropertyGenFlags::Class, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Aprojectile, ucamerashake), Z_Construct_UClass_UClass, Z_Construct_UClass_UCameraShakeBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_ucamerashake_MetaData), NewProp_ucamerashake_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_Aprojectile_Statics::NewProp_trailparticles = { "trailparticles", nullptr, (EPropertyFlags)0x00100000000a0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Aprojectile, trailparticles), Z_Construct_UClass_UNiagaraComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_trailparticles_MetaData), NewProp_trailparticles_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_Aprojectile_Statics::NewProp_hitparticles = { "hitparticles", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Aprojectile, hitparticles), Z_Construct_UClass_UNiagaraSystem_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_hitparticles_MetaData), NewProp_hitparticles_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_Aprojectile_Statics::NewProp_launchsound = { "launchsound", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Aprojectile, launchsound), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_launchsound_MetaData), NewProp_launchsound_MetaData) };
+const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_Aprojectile_Statics::NewProp_hitsound = { "hitsound", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Aprojectile, hitsound), Z_Construct_UClass_USoundBase_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_hitsound_MetaData), NewProp_hitsound_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_Aprojectile_Statics::NewProp_projectilemesh = { "projectilemesh", nullptr, (EPropertyFlags)0x00100000000a0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Aprojectile, projectilemesh), Z_Construct_UClass_UStaticMeshComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_projectilemesh_MetaData), NewProp_projectilemesh_MetaData) };
 const UECodeGen_Private::FObjectPropertyParams Z_Construct_UClass_Aprojectile_Statics::NewProp_projectilemovementcomp = { "projectilemovementcomp", nullptr, (EPropertyFlags)0x00100000000a0009, UECodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Aprojectile, projectilemovementcomp), Z_Construct_UClass_UProjectileMovementComponent_NoRegister, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_projectilemovementcomp_MetaData), NewProp_projectilemovementcomp_MetaData) };
 const UECodeGen_Private::FFloatPropertyParams Z_Construct_UClass_Aprojectile_Statics::NewProp_damage = { "damage", nullptr, (EPropertyFlags)0x0010000000000001, UECodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(Aprojectile, damage), METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_damage_MetaData), NewProp_damage_MetaData) };
 const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_Aprojectile_Statics::PropPointers[] = {
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_Aprojectile_Statics::NewProp_ucamerashake,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_Aprojectile_Statics::NewProp_trailparticles,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_Aprojectile_Statics::NewProp_hitparticles,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_Aprojectile_Statics::NewProp_launchsound,
+	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_Aprojectile_Statics::NewProp_hitsound,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_Aprojectile_Statics::NewProp_projectilemesh,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_Aprojectile_Statics::NewProp_projectilemovementcomp,
 	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_Aprojectile_Statics::NewProp_damage,
@@ -232,10 +256,10 @@ Aprojectile::~Aprojectile() {}
 struct Z_CompiledInDeferFile_FID_Users_charan_dev_Documents_Unreal_Projects_BattleBlasterStarterProject_Source_BattleBlaster_projectile_h__Script_BattleBlaster_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_Aprojectile, Aprojectile::StaticClass, TEXT("Aprojectile"), &Z_Registration_Info_UClass_Aprojectile, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(Aprojectile), 2245152920U) },
+		{ Z_Construct_UClass_Aprojectile, Aprojectile::StaticClass, TEXT("Aprojectile"), &Z_Registration_Info_UClass_Aprojectile, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(Aprojectile), 2776236316U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_charan_dev_Documents_Unreal_Projects_BattleBlasterStarterProject_Source_BattleBlaster_projectile_h__Script_BattleBlaster_1531902035(TEXT("/Script/BattleBlaster"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_Users_charan_dev_Documents_Unreal_Projects_BattleBlasterStarterProject_Source_BattleBlaster_projectile_h__Script_BattleBlaster_2615792718(TEXT("/Script/BattleBlaster"),
 	Z_CompiledInDeferFile_FID_Users_charan_dev_Documents_Unreal_Projects_BattleBlasterStarterProject_Source_BattleBlaster_projectile_h__Script_BattleBlaster_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_Users_charan_dev_Documents_Unreal_Projects_BattleBlasterStarterProject_Source_BattleBlaster_projectile_h__Script_BattleBlaster_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

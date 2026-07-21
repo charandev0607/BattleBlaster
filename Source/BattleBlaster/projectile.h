@@ -27,10 +27,16 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<UCameraShakeBase> ucamerashake;
 	UPROPERTY(VisibleAnywhere)
 	UNiagaraComponent* trailparticles;
 	UPROPERTY(EditAnywhere)
 	UNiagaraSystem* hitparticles;
+	UPROPERTY(EditAnywhere)
+	USoundBase* launchsound;
+	UPROPERTY(EditAnywhere)
+	USoundBase* hitsound;
 	UPROPERTY(VisibleAnywhere)
 	UStaticMeshComponent* projectilemesh;
 	UPROPERTY(VisibleAnywhere)

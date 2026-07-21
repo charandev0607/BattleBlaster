@@ -19,7 +19,9 @@
 				"C:/Users/charan dev/Documents/Unreal Projects/BattleBlasterStarterProject/Content/Maps/Level_4.umap",
 				"C:/Users/charan dev/Documents/Unreal Projects/BattleBlasterStarterProject/Content/Maps/Level_2.umap",
 				"C:/Users/charan dev/Documents/Unreal Projects/BattleBlasterStarterProject/Content/Maps/Level_3.umap",
-				"C:/Users/charan dev/Documents/Unreal Projects/BattleBlasterStarterProject/Content/BLUEPRINTS/WBP_usermessage.uasset"
+				"C:/Users/charan dev/Documents/Unreal Projects/BattleBlasterStarterProject/Content/BLUEPRINTS/WBP_usermessage.uasset",
+				"C:/Users/charan dev/Documents/Unreal Projects/BattleBlasterStarterProject/Content/BLUEPRINTS/BP_camerashake.uasset",
+				"C:/Users/charan dev/Documents/Unreal Projects/BattleBlasterStarterProject/Content/BLUEPRINTS/BP_camerashakebasefordefeat.uasset"
 			]
 		}
 	]

@@ -41,6 +41,9 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Input")
 	UInputAction* fireaction;
 
+	UPROPERTY(EditAnywhere)
+	TSubclassOf<UCameraShakeBase> ucamerashake;
+
 	UPROPERTY(VisibleAnywhere)
 	USpringArmComponent* springarmcomp;
 
